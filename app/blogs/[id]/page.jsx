@@ -1,6 +1,6 @@
 'use client';
-import { blog_data, assets } from '@/Assets/assets'
-import Footer from '@/components/Footer';
+import { blog_data, assets } from '../../../Assets/assets'
+import Footer from '../../../components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
