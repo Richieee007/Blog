@@ -14,7 +14,14 @@ module.exports = {
       },  
       boxShadow: {
         'custom-black': '-7px 7px 0px #000000',
+        'custom-blue': '-7px 7px 0px #2986cc',
       },
+      textColor:{
+        'turk-blue': '#2986cc',
+      },
+      backgroundColor:{
+        'blueback': '#2986cc',
+      }
     },
   },
   plugins: [],
