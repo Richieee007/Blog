@@ -42,15 +42,8 @@ const BlogPage = ({params}) => {
     </div> 
     <div className="mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10">
       <Image className='border-4 border-white' src={data.image} width={1280} height={720} alt=''/>
-      <h1 className='my-8 text-[26px] font-semibold'>Introduction</h1>
-      <p>{data.description}</p>
-      <h3 className='my-5 text-[18px] font-semibold'>In our latest blog post, we unravel the secrets of creating a perfect morning routine to kickstart your day with energy and positivity. Dive in for simple tips and practical advice that will transform your mornings from drab to fab!</h3>
-      <p className="my-3">Discover the art of mindful living in our newest blog post, where we share easy techniques to stay present and reduce stress in your daily life. Learn how to bring calm and clarity to your busy schedule with just a few simple changes.</p>
-      <h3 className='my-5 text-[18px] font-semibold'>In our latest blog post, we unravel the secrets of creating a perfect morning routine to kickstart your day with energy and positivity. Dive in for simple tips and practical advice that will transform your mornings from drab to fab!</h3>
-      <p className="my-3">Discover the art of mindful living in our newest blog post, where we share easy techniques to stay present and reduce stress in your daily life. Learn how to bring calm and clarity to your busy schedule with just a few simple changes.</p>
-      <h1 className='my-8 text-[26px] font-semibold'>Conclusion</h1>
-      <h3 className='my-5 text-[18px] font-semibold'>In our latest blog post, we unravel the secrets of creating a perfect morning routine to kickstart your day with energy and positivity. Dive in for simple tips and practical advice that will transform your mornings from drab to fab!</h3>
-      <p className="my-3">Discover the art of mindful living in our newest blog post, where we share easy techniques to stay present and reduce stress in your daily life. Learn how to bring calm and clarity to your busy schedule with just a few simple changes.</p>
+      <div className='blog-content' dangerouslySetInnerHTML={{__html:data.description}}></div>
+      
       <div className="my-24">
         <p className='text-turk-blue font-semibold my-4'>Share on Social Media</p>
         <div className="flex">
