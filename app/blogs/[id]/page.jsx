@@ -1,4 +1,5 @@
 'use client';
+import axios from 'axios';
 import { blog_data, assets } from '../../../Assets/assets'
 import Footer from '../../../components/Footer';
 import Image from 'next/image';
@@ -9,15 +10,14 @@ const BlogPage = ({params}) => {
 
   const [data, setData] = useState(null);
 
-  const fetchBlogData =  () => {
+  const fetchBlogData = async () => {
 
-    for(let i = 0;i<blog_data.length;i++){
-      if (Number(params.id)===blog_data[i].id){
-        setData(blog_data[i]);
-        console.log(blog_data[i])
-        break;
-      }
+   const response = await axios.get('/api/blog', {
+    params:{
+      id:params.id
     }
+   })
+   setData(response.data);
 
   }
 
@@ -32,11 +32,11 @@ const BlogPage = ({params}) => {
     <div className='bg-gray-200 py-5 px-5 md:px-12 lg:px-28'>
       <div className="flex justify-between items-center">
       <Link href={'../'} className='cursor-pointer'><Image src={assets.logo1} width={180} alt='' className='w-[130px] sm:w-auto'/>
-       </Link> <button className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-custom-blue'>Lets Get It!! <Image src={assets.arrow} alt=''/></button>
+       </Link> <Link href='/admin'><button className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-custom-blue'>Lets Get It!! <Image src={assets.arrow} alt=''/></button></Link>
       </div>
       <div className="text-center my-24">
         <h1 className='text-2xl text-turk-blue sm:text-5xl font-semibold max-w-[700px] mx-auto'>{data.title}</h1>
-        <Image src={data.author_img} className='mx-auto mt-6 border border-white rounded-full' width={60} height={60} alt=''/>
+        <Image src={data.authorImg} className='mx-auto mt-6 border border-white rounded-full' width={60} height={60} alt=''/>
         <p className='mt-1 pb-2 text-lg max-w-[740px] mx-auto text-turk-blue'>{data.author}</p>
       </div>
     </div> 

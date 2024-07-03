@@ -10,11 +10,24 @@ const LoadDB = async () => {
 
 LoadDB();
 
+//API Endpoint to get all blogs
 export async function GET(request){
 
+    const blogId = request.nextUrl.searchParams.get("id");
+    if (blogId) {
+        const blog = await BlogModel.findById(blogId);
+        return NextResponse.json(blog);
+    } else {
+
+        const blogs = await BlogModel.find({});
     
-    return NextResponse.json({msg: "API Working"})
+    // console.log("This is all the Blogs ", blogs)
+    return NextResponse.json({blogs})
+
+    }
 }
+
+// API EndtPoint for Uploading Blogs
 
 export async function POST(request){
 
