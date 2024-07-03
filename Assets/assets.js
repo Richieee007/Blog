@@ -18,6 +18,7 @@ import facebook_icon from './facebook_icon.png'
 import googleplus_icon from './googleplus_icon.png'
 import twitter_icon from './twitter_icon.png'
 import profile_icon from './profile_icon.png'
+import dashboard_icon from './dashboard_icon.png'
 import logo from './logo.png'
 import logo1 from './logo1.png'
 import arrow from './arrow.png'
@@ -41,7 +42,8 @@ export const assets = {
     blog_icon,
     add_icon,
     email_icon,
-    upload_area
+    upload_area,
+    dashboard_icon
     }
 
     export const blog_data = [{

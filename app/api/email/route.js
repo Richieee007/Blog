@@ -19,7 +19,23 @@ export async function POST(request){
         await EmailModel.create(emailData);
         console.log("Email Saved")
         return NextResponse.json({success: true, msg: "Email Added Successfully"});
-
-
-
 }
+
+export async function GET(request){
+
+    const emails = await EmailModel.find({});
+    
+    // console.log("This is all the Emails ", emails)
+    return NextResponse.json({emails});
+
+    }
+
+    export async function DELETE(request){
+
+        const id = await request.nextUrl.searchParams.get("id");
+        const email = await EmailModel.findById(id);
+        await EmailModel.findByIdAndDelete(id);
+        return NextResponse.json({msg: "Email Deleted Successfully"})
+    
+    }
+    
